@@ -1,0 +1,14 @@
+{
+  "_output_dir": "/Users/matias/Code/personal",
+  "_template": "gh:cjolowicz/cookiecutter-hypermodern-python",
+  "author": "Matias Kotlik",
+  "copyright_year": "2023",
+  "development_status": "Development Status :: 3 - Alpha",
+  "email": "mdkotlik@gmail.com",
+  "friendly_name": "AlphaGenie",
+  "github_user": "qmatias",
+  "license": "GPL-3.0",
+  "package_name": "alphagenie",
+  "project_name": "alphagenie",
+  "version": "0.0.0"
+}
