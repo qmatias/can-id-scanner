@@ -1,1 +1,1 @@
-"""Test suite for the alphagenie package."""
+"""Test Module."""

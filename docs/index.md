@@ -19,5 +19,5 @@ reference
 contributing
 Code of Conduct <codeofconduct>
 License <license>
-Changelog <https://github.com/qmatias/alphagenie/releases>
+Changelog <https://github.com/qmatias/can-id-scanner/releases>
 ```

@@ -1,23 +1,23 @@
-# AlphaGenie
+# CAN ID Scanner
 
-[![PyPI](https://img.shields.io/pypi/v/alphagenie.svg)][pypi_]
-[![Status](https://img.shields.io/pypi/status/alphagenie.svg)][status]
-[![Python Version](https://img.shields.io/pypi/pyversions/alphagenie)][python version]
-[![License](https://img.shields.io/pypi/l/alphagenie)][license]
+[![PyPI](https://img.shields.io/pypi/v/can-id-scanner.svg)][pypi_]
+[![Status](https://img.shields.io/pypi/status/can-id-scanner.svg)][status]
+[![Python Version](https://img.shields.io/pypi/pyversions/can-id-scanner)][python version]
+[![License](https://img.shields.io/pypi/l/can-id-scanner)][license]
 
-[![Read the documentation at https://alphagenie.readthedocs.io/](https://img.shields.io/readthedocs/alphagenie/latest.svg?label=Read%20the%20Docs)][read the docs]
-[![Tests](https://github.com/qmatias/alphagenie/workflows/Tests/badge.svg)][tests]
-[![Codecov](https://codecov.io/gh/qmatias/alphagenie/branch/main/graph/badge.svg)][codecov]
+[![Read the documentation at https://can-id-scanner.readthedocs.io/](https://img.shields.io/readthedocs/can-id-scanner/latest.svg?label=Read%20the%20Docs)][read the docs]
+[![Tests](https://github.com/qmatias/can-id-scanner/workflows/Tests/badge.svg)][tests]
+[![Codecov](https://codecov.io/gh/qmatias/can-id-scanner/branch/main/graph/badge.svg)][codecov]
 
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][pre-commit]
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)][black]
 
-[pypi_]: https://pypi.org/project/alphagenie/
-[status]: https://pypi.org/project/alphagenie/
-[python version]: https://pypi.org/project/alphagenie
-[read the docs]: https://alphagenie.readthedocs.io/
-[tests]: https://github.com/qmatias/alphagenie/actions?workflow=Tests
-[codecov]: https://app.codecov.io/gh/qmatias/alphagenie
+[pypi_]: https://pypi.org/project/can-id-scanner/
+[status]: https://pypi.org/project/can-id-scanner/
+[python version]: https://pypi.org/project/can-id-scanner
+[read the docs]: https://can-id-scanner.readthedocs.io/
+[tests]: https://github.com/qmatias/can-id-scanner/actions?workflow=Tests
+[codecov]: https://app.codecov.io/gh/qmatias/can-id-scanner
 [pre-commit]: https://github.com/pre-commit/pre-commit
 [black]: https://github.com/psf/black
 
@@ -31,10 +31,10 @@
 
 ## Installation
 
-You can install _AlphaGenie_ via [pip] from [PyPI]:
+You can install _CAN ID Scanner_ via [pip] from [PyPI]:
 
 ```console
-$ pip install alphagenie
+$ pip install can_id_scanner
 ```
 
 ## Usage
@@ -49,7 +49,7 @@ To learn more, see the [Contributor Guide].
 ## License
 
 Distributed under the terms of the [GPL 3.0 license][license],
-_AlphaGenie_ is free and open source software.
+_CAN ID Scanner_ is free and open source software.
 
 ## Issues
 
@@ -58,16 +58,17 @@ please [file an issue] along with a detailed description.
 
 ## Credits
 
-This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter] template.
+This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter]
+template.
 
 [@cjolowicz]: https://github.com/cjolowicz
 [pypi]: https://pypi.org/
 [hypermodern python cookiecutter]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
-[file an issue]: https://github.com/qmatias/alphagenie/issues
+[file an issue]: https://github.com/qmatias/can-id-scanner/issues
 [pip]: https://pip.pypa.io/
 
 <!-- github-only -->
 
-[license]: https://github.com/qmatias/alphagenie/blob/main/LICENSE
-[contributor guide]: https://github.com/qmatias/alphagenie/blob/main/CONTRIBUTING.md
-[command-line reference]: https://alphagenie.readthedocs.io/en/latest/usage.html
+[license]: https://github.com/qmatias/can-id-scanner/blob/main/LICENSE
+[contributor guide]: https://github.com/qmatias/can-id-scanner/blob/main/CONTRIBUTING.md
+[command-line reference]: https://can-id-scanner.readthedocs.io/en/latest/usage.html

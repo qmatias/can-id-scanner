@@ -9,7 +9,12 @@ on:
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
@@ -17,7 +22,7 @@ jobs:
           fetch-depth: 2
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
@@ -31,49 +36,20 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt poetry
           poetry --version
 
-      - name: Check if there is a parent commit
-        id: check-parent-commit
+      - name: Install dependencies
         run: |
-          echo "::set-output name=sha::$(git rev-parse --verify --quiet HEAD^)"
+          poetry run pip install wheel playsound
+          poetry install --no-root
+          poetry show
 
-      - name: Detect and tag new version
-        id: check-version
-        if: steps.check-parent-commit.outputs.sha
-        uses: salsify/action-detect-and-tag-new-version@v2.0.1
-        with:
-          version-command: |
-            bash -o pipefail -c "poetry version | awk '{ print \$2 }'"
-
-      - name: Bump version for developmental release
-        if: "! steps.check-version.outputs.tag"
+      - name: Build
         run: |
-          poetry version patch &&
-          version=$(poetry version | awk '{ print $2 }') &&
-          poetry version $version.dev.$(date +%s)
+          poetry run pyinstaller --onefile src/can_id_scanner/scanner.py
+          poetry run pyinstaller --onefile src/can_id_scanner/list_devices.py
+          ls -l dist
 
-      - name: Build package
-        run: |
-          poetry build --ansi
-
-      - name: Publish package on PyPI
-        if: steps.check-version.outputs.tag
-        uses: pypa/gh-action-pypi-publish@v1.5.0
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
         with:
-          user: __token__
-          password: ${{ secrets.PYPI_TOKEN }}
-
-      - name: Publish package on TestPyPI
-        if: "! steps.check-version.outputs.tag"
-        uses: pypa/gh-action-pypi-publish@v1.5.0
-        with:
-          user: __token__
-          password: ${{ secrets.TEST_PYPI_TOKEN }}
-          repository_url: https://test.pypi.org/legacy/
-
-      - name: Publish the release notes
-        uses: release-drafter/release-drafter@v5.20.0
-        with:
-          publish: ${{ steps.check-version.outputs.tag != '' }}
-          tag: ${{ steps.check-version.outputs.tag }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: build-${{ matrix.os }}
+          path: dist/*

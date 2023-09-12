@@ -1,5 +1,5 @@
 """Sphinx configuration."""
-project = "AlphaGenie"
+project = "CAN ID Scanner"
 author = "Matias Kotlik"
 copyright = "2023, Matias Kotlik"
 extensions = [

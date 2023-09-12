@@ -1,7 +1,7 @@
 # Usage
 
 ```{eval-rst}
-.. click:: alphagenie.__main__:main
-    :prog: alphagenie
+.. click:: can_id_scanner.__main__:main
+    :prog: can_id_scanner
     :nested: full
 ```

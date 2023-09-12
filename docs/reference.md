@@ -1,8 +1,8 @@
 # Reference
 
-## alphagenie
+## can_id_scanner
 
 ```{eval-rst}
-.. automodule:: alphagenie
+.. automodule:: can_id_scanner
    :members:
 ```
